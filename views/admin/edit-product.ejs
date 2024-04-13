@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= pageTitle %></title>
+    <%- include('../includes/links.ejs')%>
+  </head>
+  <body>
+    <div class="container">
+      <%- include('../includes/navigation.ejs') %>
+      <main>
+        <% if( errorMessage ){ %>
+        <h3 class="text-center text-danger"><%= errorMessage %></h3>
+        <% } %>
+        <form
+          action="/admin/<%= editMode ? 'edit-product' : 'add-product' %>"
+          method="POST"
+          enctype="multipart/form-data"
+        >
+          <div class="mb-3 mx-auto w-50">
+            <label for="title" class="form-label">Title</label>
+            <input
+              class="form-control"
+              type="text"
+              name="title"
+              id="title"
+              value="<%= editMode || hasError ? product.title : null %>"
+            />
+          </div>
+          <div class="mb-3 mx-auto w-50">
+            <label for="price" class="form-label">Price</label>
+            <input
+              class="form-control"
+              type="number"
+              name="price"
+              id="price"
+              step="0.01"
+              value="<%= editMode || hasError ? product.price : null %>"
+              required
+            />
+          </div>
+          <div class="mb-3 mx-auto w-50">
+            <label for="image" class="form-label">Image</label>
+            <input class="form-control" type="file" name="image" id="image" />
+          </div>
+          <div class="mb-3 mx-auto w-50">
+            <label for="description" class="form-label">Description</label>
+            <textarea
+              type="text"
+              class="form-control"
+              name="description"
+              id="description"
+            >
+            <%= editMode || hasError ? product.description : null %>
+          </textarea
+            >
+            <% if( editMode ){ %>
+            <input type="hidden" value="<%= product._id %>" name="productId" />
+            <% }%>
+          </div>
+
+          <button type="submit" class="btn btn-outline-primary d-block mx-auto">
+            <%= editMode ? 'Update' : 'Add Product' %>
+          </button>
+        </form>
+      </main>
+      <%- include('../includes/footer.ejs') %>
+    </div>
+    <%- include('../includes/scripts.ejs') %>
+  </body>
+</html>

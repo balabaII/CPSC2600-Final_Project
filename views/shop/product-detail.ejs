@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= pageTitle %></title>
+    <%- include('../includes/links.ejs')%>
+  </head>
+  <body>
+    <div class="container">
+      <%- include('../includes/navigation.ejs') %>
+
+      <main class="text-center">
+        <h1><%= product.title %></h1>
+        <hr />
+
+        <div style="max-width: 400px; height: 200px">
+          <img src="<%= product.image %>" alt="<%= product.title %> image" />
+        </div>
+
+        <h2>$<%= product.price %></h2>
+        <p><%= product.description %></p>
+        <%- include('../includes/add-to-cart.ejs') %>
+      </main>
+      <%- include('../includes/add-to-cart.ejs') %>
+    </div>
+    <%- include('../includes/scripts.ejs') %>
+  </body>
+</html>

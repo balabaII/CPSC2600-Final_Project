@@ -1,0 +1,30 @@
+#modal {
+  position: absolute;
+  display: none;
+  width: 100vw;
+  min-height: 100vh;
+  left: 0;
+  top: 0;
+  z-index: 3;
+}
+
+.modal-blur {
+  position: absolute;
+  display: inherit;
+  width: 100vw;
+  height: 100vh;
+
+  filter: blur(5px);
+  background-color: lightblue;
+  opacity: 0.6;
+  z-index: 2;
+}
+
+#modal .modal-content {
+  position: absolute;
+  display: inherit;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+}

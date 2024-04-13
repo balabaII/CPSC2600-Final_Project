@@ -1,0 +1,83 @@
+<header class="mb-4">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary rounded">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">CPSC2600-Erbol</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a
+              href="/"
+              class="nav-link btn btn-info <%= path == '/' ? 'active' : null %>"
+              >Home</a
+            >
+          </li>
+          <li class="nav-item mx-3">
+            <a
+              href="/products"
+              class="nav-link btn btn-info <%= path=='/products' ? 'active' : null %>"
+              >Products</a
+            >
+          </li>
+          <% if( authPassed) { %>
+          <li class="nav-item">
+            <a
+              href=" /cart"
+              class="nav-link btn btn-info <%= path == '/cart' ? 'active' : null %>"
+              >Cart</a
+            >
+          </li>
+          <li class="nav-item mx-3">
+            <a
+              href="/admin/products"
+              class="nav-link btn btn-info <%= path == '/admin/products' ? 'active' : null %>"
+              >My Products</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              href="/admin/add-product"
+              class="nav-link btn btn-info <%= path == '/admin/add-product' ? 'active' : null %>"
+              >Add Product</a
+            >
+          </li>
+          <% } %> <% if( !authPassed) { %>
+          <li class="nav-item">
+            <a
+              href="/login"
+              class="nav-link btn btn-info <%= path == '/login' ? 'active' : null %>"
+              >LogIn</a
+            >
+          </li>
+          <li class="nav-item mx-3">
+            <a
+              href="/signup"
+              class="nav-link btn btn-info <%= path == '/signup' ? 'active' : null %>"
+              >SignUp</a
+            >
+          </li>
+          <% } else { %>
+          <li class="nav-item mx-3">
+            <form action="/logout" method="POST">
+              <button class="nav-link btn btn-info w-100" type="submit">
+                Logout
+              </button>
+            </form>
+          </li>
+          <% } %>
+        </ul>
+        <ul></ul>
+      </div>
+    </div>
+  </nav>
+</header>

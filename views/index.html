@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="icon" type="image/x-icon" href="./img/question.svg" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/5.3.3/quartz/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary rounded">
+          <div class="container-fluid">
+            <a class="navbar-brand">
+              <img src="./img/question.svg" alt="" width="50px" height="50px" />
+              Single Page Application
+              <sup>SPA</sup>
+            </a>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarNav"
+              aria-controls="navbarNav"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link active btn btn-info" page-link="home">
+                    Home
+                  </a>
+                </li>
+
+                <li class="nav-item">
+                  <a class="nav-link btn btn-info" page-link="about">About</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="d-flex justify-content-end" id="geolocation">
+            <div class="d-flex justify-content-end align-items-center mx-1">
+              Latitude:
+              <span class="btn btn-outline-info" id="latitude">49.28</span>
+            </div>
+            <div class="d-flex justify-content-end align-items-center mx-1">
+              Longitude:
+              <span class="btn btn-outline-info" id="longitude">-123.11</span>
+            </div>
+          </div>
+        </nav>
+      </header>
+      <hr />
+
+      <!-- modal start -->
+      <div id="modal">
+        <div class="modal-blur"></div>
+        <div class="modal-content w-75 mx-auto rounded">
+          <div class="modal-header bg-info d-flex justify-content-center">
+            <h5 class="modal-title p-2">Terms and Conditions</h5>
+          </div>
+          <div class="modal-body">
+            <div class="container">
+              <ol class="my-2">
+                <li class="fw-bold">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero
+                  asperiores incidunt minima velit libero minus aspernatur sint
+                  consequuntur. Molestias minima veniam molestiae soluta,
+                  reprehenderit iure magnam consequatur porro culpa aliquam!
+                </li>
+                <li class="fw-bold">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero
+                  asperiores incidunt minima velit libero minus aspernatur sint
+                  consequuntur. Molestias minima veniam molestiae soluta,
+                  reprehenderit iure magnam consequatur porro culpa aliquam!
+                </li>
+              </ol>
+              <ul class="list-group">
+                <li class="list-group-item">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    id="modal-checkbox"
+                  />
+                  <label class="form-check-label f-bold" for="flexCheckDefault">
+                    I agree
+                  </label>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="modal-footer mt-2">
+            <button
+              type="button"
+              class="btn btn-info w-100 text-center"
+              disabled
+            >
+              OK
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- modal end -->
+      <main>
+        <!-- home start -->
+        <section page-section="home">
+          <div class="row">
+            <div class="col-xs-12 col-md-6">
+              <div class="card">
+                <div class="card-header bg-primary">
+                  <h5 class="card-title text-center p-0 m-0">Node.js</h5>
+                </div>
+                <div class="card-body">
+                  <figure>
+                    <blockquote class="blockquote">
+                      <p class="card-text">
+                        As an asynchronous event-driven JavaScript runtime,
+                        Node.js is designed to build scalable network
+                        applications. This is in constant to today's more common
+                        concurrency model, in which OS threads are employed.
+                        Thread-based networking is relatively inefficient and
+                        very difficult to use. Furthermore, users of Node.js are
+                        free from worries of dead-locking the process, since
+                        there are no locks
+                      </p>
+                    </blockquote>
+                    <hr />
+                    <figcaption class="blockquote-footer mb-0">
+                      Node.js
+                    </figcaption>
+                  </figure>
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-12 col-md-6">
+              <div class="card">
+                <div class="card-header bg-primary">
+                  <h5 class="card-title text-center p-0 m-0">Web APIs</h5>
+                </div>
+                <div class="card-body">
+                  <figure>
+                    <blockquote class="blockquote">
+                      <p class="card-text">
+                        Application Programming Interfaces (APIs) are construct
+                        made available in programming languages to allow
+                        developers to create complex functionality more easily.
+                        They abstract more complex code away from you, providing
+                        some easier syntax to use in this place.
+                        <br />
+                        Web APIs are typically used with JavaScript, although
+                        this doesn't always to to be the case.
+                      </p>
+                    </blockquote>
+                    <hr />
+                    <figcaption class="blockquote-footer mb-0">
+                      Mozilla Developer Network(MDN)
+                    </figcaption>
+                  </figure>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- home end -->
+
+        <!-- about start -->
+        <section class="d-none" page-section="about">
+          <div class="card w-75 mx-auto">
+            <div class="card-header bg-primary">
+              <h5 class="card-title text-center p-0 m-0">
+                Full Stack Web Development I(CPSC 2600)
+              </h5>
+            </div>
+            <div class="card-body">
+              <figure>
+                <blockquote class="blockquote">
+                  <p class="card-text">
+                    Students explore web application development concepts and
+                    practices, including common full-stack architectures,
+                    server-side scripting languages and frameworks, and
+                    databases. Students learn basics of server-side-scripting
+                    and build a basic web application using contemporary
+                    languages, libraries and frameworks.
+                  </p>
+                </blockquote>
+                <hr />
+                <figcaption class="blockquote-footer mb-0">
+                  Langara College <cite>(CPSC 2600 Course Description)</cite>
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <hr />
+
+      <footer class="text-center">
+        <div class="d-flex justify-content-center align-items-center my-2">
+          <p class="h5 mx-1">Follow Us</p>
+          <i class="bi bi-youtube btn btn-danger mx-1"></i>
+          <i class="bi bi-twitter btn btn-primary mx-1"></i>
+          <i class="bi bi-whatsapp btn btn-success mx-1"></i>
+          <i class="bi bi-instagram btn btn-warning mx-1"></i>
+        </div>
+        <span class="text-info bg-light rounded h4">
+          @ <span id="footer-year">2024.</span>
+          M. Bouguerra. All Rights Reserved.
+        </span>
+      </footer>
+    </div>
+    <script src="./js/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.min.js"></script>
+  </body>
+</html>

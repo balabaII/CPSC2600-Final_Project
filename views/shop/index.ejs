@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= pageTitle %></title>
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/5.3.3/materia/bootstrap.min.css"
+    />
+    <%- include('../includes/links.ejs')%>
+  </head>
+  <body>
+    <div class="container">
+      <%- include('../includes/navigation.ejs') %>
+
+      <main>
+        <section>
+          <div class="card w-75 mx-auto">
+            <div class="card-header bg-primary">
+              <h5 class="card-title text-center p-0 m-0">
+                Full Stack Web Development I(CPSC 2600)
+              </h5>
+            </div>
+            <div class="card-body">
+              <figure>
+                <blockquote class="blockquote">
+                  <p class="card-text">
+                    Students explore web application development concepts and
+                    practices, including common full-stack architectures,
+                    server-side scripting languages and frameworks, and
+                    databases. Students learn basics of server-side-scripting
+                    and build a basic web application using contemporary
+                    languages, libraries and frameworks.
+                  </p>
+                </blockquote>
+                <hr />
+                <figcaption class="blockquote-footer mb-0">
+                  Langara College <cite>(CPSC 2600 Course Description)</cite>
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+        </section>
+      </main>
+      <%- include('../includes/footer.ejs') %>
+    </div>
+    <%- include('../includes/scripts.ejs') %>
+  </body>
+</html>

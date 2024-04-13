@@ -1,0 +1,8 @@
+<% if( authPassed) { %>
+<form action="/cart" method="POST">
+  <button type="submit" class="btn btn-outline-primary w-100">
+    Add to Cart
+  </button>
+  <input type="hidden" name="productId" value="<%= product._id %>" />
+</form>
+<% } %>

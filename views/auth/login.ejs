@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= pageTitle %></title>
+    <%- include('../includes/links.ejs')%>
+  </head>
+  <body>
+    <div class="container">
+      <%- include('../includes/navigation.ejs') %>
+      <main>
+        <% if( errorMessage){ %>
+        <h3 class="text-center text-danger"><%= errorMessage %></h3>
+        <% } %>
+
+        <form action="/login" method="POST" novalidate>
+          <div class="mb-3 mx-auto w-50">
+            <label for="email" class="form-label">Email</label>
+            <input
+              class="form-control <%= validationArray.find(e => e.path === 'email') ? 'is-invalid' : null %>"
+              type="email"
+              name="email"
+              id="email"
+              value="<%= oldInput?.email %>"
+            />
+          </div>
+          <div class="mb-3 mx-auto w-50">
+            <label for="password" class="form-label">Password</label>
+            <input
+              class="form-control <%= validationArray.find(e => e.path === 'password') ? 'is-invalid' : null %>"
+              type="password"
+              name="password"
+              id="password"
+              value="<%= oldInput?.password %>"
+            />
+          </div>
+
+          <button type="submit" class="btn btn-outline-primary d-block mx-auto">
+            Login
+          </button>
+        </form>
+      </main>
+      <%- include('../includes/footer.ejs') %>
+    </div>
+    <%- include('../includes/scripts.ejs') %>
+  </body>
+</html>
