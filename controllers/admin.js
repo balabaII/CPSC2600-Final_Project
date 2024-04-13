@@ -1,7 +1,6 @@
 (() => {
   const { validationResult } = require("express-validator");
 
-  const { deleteFile } = require("../util/path");
   const Product = require("../models/product");
 
   exports.getProducts = (req, res, next) => {
@@ -176,7 +175,6 @@
     const { productId } = req.params;
     Product.findById(productId)
       .then((product) => {
-        deleteFile(product.image);
         return Product.deleteOne({
           _id: productId,
           userId: req.user._id,
